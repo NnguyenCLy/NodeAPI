@@ -40,9 +40,9 @@ app.get("/api/employees", async (req, res) => {
 // POST endpoint to add a new employee
 app.post("/api/employees", async (req, res) => {
   try {
-    //let id = new mongoose.Types.ObjectId();
+    let id = new mongoose.Types.ObjectId();
     const newEmployee = req.body;
-    //newEmployee._id = id;
+    newEmployee._id = id;
     await Employee.create(newEmployee);
     res.status(201).json(newEmployee);
   } catch (err) {
